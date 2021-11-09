@@ -1,5 +1,13 @@
-var getUserRepo = function() {
-    fetch("https://api.github.com/user/octocat/repos");
-}
+var getUserRepo = function(user) {
+    // format the github api url
+    var apiUrl = "https://api.github.com/users/" + user + "/repos";
 
-getUserRepo();
+    // make request to the url
+    fetch(apiUrl).then(function(response){
+        response.json().then(function(data) {
+            console.log(data);
+        }); 
+    });
+};
+
+getUserRepo("facebook");
