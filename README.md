@@ -1,1 +1,2 @@
 # get-it-done
+An app designer to allow user to search for Github repos and view the number of issues associated to that repo. User also have the option to search for issues pertaining to a certain type of code language (JS,HMTL,CSS). Once you find a repo with issues you can click on it and in a new window the issues will be listed. If more than 30 issues are open a link a the bottom of the page will link direclty to github in a new window to view all of the issues. 
