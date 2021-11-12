@@ -19,10 +19,11 @@ var getRepoIssues = function(repo){
                 // check if api has paginated issues
                 if (response.headers.get("link")) {
                     displayWarning(repo);
-                }else {
-                    document.location.replace("./index.html");
                 }
             });
+        }else {
+            // if not successful, redirect to home page
+            document.location.replace("./index.html");
         }
     });
 }
@@ -33,15 +34,6 @@ var getRepoName = function() {
     var queryString = document.location.search;
     var repoName = queryString.split("=")[1];
 
-    if(repoName) {
-        // display repo name on the page
-        repoNameEl.textContent = repoName;
-
-        getRepoIssues(repoName);
-    }else {
-        // if not successful, redirect to homepage
-        document.location.replace("./index.html");
-    }
 };
 
 var displayWarning = function(repo) {
